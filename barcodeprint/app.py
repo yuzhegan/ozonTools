@@ -154,5 +154,5 @@ async def root():
     return {"message": "Welcome to the API"}
 
 
-if __name__ == "__main__":
-    uvicorn.run("app:app", reload=True, port=5051, host="0.0.0.0")
+# if __name__ == "__main__":
+#     uvicorn.run("app:app", reload=True, port=5051, host="0.0.0.0")
