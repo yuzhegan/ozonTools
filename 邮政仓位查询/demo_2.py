@@ -8,12 +8,8 @@ import os
 import time
 from requests import Request, Session
 import random
+from genparentorders import genparentorders
 
-daohuo_time = '2024-10-11'  #"2000011333504“ 货到海外仓日期
-# daohuo_time = '2024-10-23' 
-# daohuo_time = None 
-parentOrders = '32632254'
-# parentOrders = '32665708'
 
 
 
@@ -35,8 +31,28 @@ headers = {
 }
 
 
+
 session = Session()
 session.headers.update(headers)
+
+
+
+daohuo_time = '2024-10-12'  #"2000011333504“ 货到海外仓日期
+shippmentno = '2000011332950'
+# daohuo_time = None 
+# parentOrders = '32632254'
+parentOrders = genparentorders(session, shippmentno)
+# parentOrders = '32665708'
+
+
+
+
+
+
+
+
+
+
 response = session.get(
     f'https://seller.ozon.ru/api/supplier-service/companies/current/parent-orders/{parentOrders}',
     headers=headers,
@@ -51,7 +67,7 @@ from datetime import datetime, timedelta
 
 
 while True:
-    time.sleep(random.randint(30, 60))
+    time.sleep(random.randint(50, 80))
 
     # 计算 lastDayWithTimeslots
     parent_order_date = datetime.strptime(daohuo_time, "%Y-%m-%d")
