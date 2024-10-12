@@ -24,5 +24,6 @@ def genparentorders(session, parentOrderNumber):
     for parentorder in genparentorders:
         if str(parentorder['parentOrderNumber']) == str(parentOrderNumber):
             ic(parentorder['parentOrderId'])
+            ic(parentorder['parentOrderNumber'])
             return str(parentorder['parentOrderId'])
 

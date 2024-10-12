@@ -11,8 +11,11 @@ from requests import Request, Session
 # daohuo_time = '2024-10-16'  #"2000011333504“ 货到海外仓日期
 daohuo_time = '2024-10-23' 
 # daohuo_time = None 
-parentOrders = '32279725'
-# parentOrders = '32648169'
+# parentOrders = '32279725'
+# parentOrders = '32632254'
+parentOrders = '33686919'
+# parentOrders = '33687036'
+# parentOrders = '33687133'
 
 
 headers = {
@@ -45,7 +48,7 @@ response = session.get(
 
 #xuanzhe
 json_data = {
-    'timeslotFromLocal': '2024-10-17T18:00:00',
+    'timeslotFromLocal': '2024-10-18T18:00:00',
 }
 
 response = session.put(
@@ -55,13 +58,12 @@ response = session.put(
     json=json_data,
 )
 ic(response.status_code)
-ic(response.json())
-ic(response.status_code)
+# ic(response.json())
 
 
 # if response.status_code == 200:
-#tijiao
-# response = session.get(f'https://seller.ozon.ru/api/supplier-service/companies/current/parent-orders/{parentOrders}/supply-preparation', headers=headers)
-#
-# ic(response.json())
-# ic("提交成功")
+# tijiao
+response = session.get(f'https://seller.ozon.ru/api/supplier-service/companies/current/parent-orders/{parentOrders}/supply-preparation', headers=headers)
+
+ic(response.json())
+ic("提交成功")

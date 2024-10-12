@@ -37,8 +37,11 @@ session.headers.update(headers)
 
 
 
-daohuo_time = '2024-10-12'  #"2000011333504“ 货到海外仓日期
-shippmentno = '2000011332950'
+daohuo_time = '2024-10-20'  #"2000011333504“ 货到海外仓日期
+# shippmentno = '2000011332950'
+# shippmentno = '2000011912611'
+# shippmentno = '2000011912664'
+shippmentno = '2000011912715'
 # daohuo_time = None 
 # parentOrders = '32632254'
 parentOrders = genparentorders(session, shippmentno)
